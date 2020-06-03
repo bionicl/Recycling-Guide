@@ -1,0 +1,24 @@
+//
+//  HistoryView.swift
+//  JakieSmieci
+//
+//  Created by Maciej Maj on 03/06/2020.
+//  Copyright © 2020 Teal Fire. All rights reserved.
+//
+
+import SwiftUI
+
+struct HistoryView: View {
+    var body: some View {
+        NavigationView {
+            Text("Hello world")
+            .navigationBarTitle(Text("Historia"))
+        }
+    }
+}
+
+struct HistoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        HistoryView()
+    }
+}
