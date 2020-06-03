@@ -11,7 +11,11 @@ import SwiftUI
 struct HistoryView: View {
     var body: some View {
         NavigationView {
-            Text("Hello world")
+            List {
+                HistoryRow()
+                HistoryRow()
+                HistoryRow()
+            }
             .navigationBarTitle(Text("Historia"))
         }
     }

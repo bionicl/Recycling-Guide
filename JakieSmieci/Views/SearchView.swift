@@ -11,9 +11,7 @@ import SwiftUI
 struct SearchView: View {
     var body: some View {
         NavigationView {
-            List {
-                
-            }
+            Text("Tu będzie ui szukania")
             .navigationBarTitle(Text("Odpady"))
         }
     }

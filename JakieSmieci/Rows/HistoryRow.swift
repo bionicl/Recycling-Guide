@@ -10,12 +10,24 @@ import SwiftUI
 
 struct HistoryRow: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack(alignment: .leading) {
+                Text("Paragon")
+                Text("Odpady zmieszane")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+            Spacer()
+            Image(systemName: "trash.fill")
+                .imageScale(.large)
+                .foregroundColor(.black)
+        }
     }
 }
 
 struct HistoryRow_Previews: PreviewProvider {
     static var previews: some View {
         HistoryRow()
+            .padding()
     }
 }
