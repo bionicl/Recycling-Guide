@@ -9,15 +9,23 @@
 import SwiftUI
 
 struct RubbishView: View {
+    @State private var searchText : String = ""
+    
     var body: some View {
         NavigationView {
-            List(rubbishData, id: \._id) { rubbish in
-                RubbishRow(rubbish: rubbish)
-                    
-            }
+            VStack {
+                SearchBar(text: $searchText)
+                List{
+                    ForEach(rubbishData.filter {
+                        self.searchText.isEmpty ? true : $0.Nazwa.lowercased().contains(self.searchText.lowercased())
+                    }, id: \.self) { rubbish in
+                        RubbishRow(rubbish: rubbish)
+                    }
+                }
 
             
-            .navigationBarTitle(Text("Odpady"))
+                .navigationBarTitle(Text("Odpady"))
+            }
         }
     }
 }

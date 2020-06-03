@@ -11,6 +11,7 @@
 		F858A0B024884CF3005E7E41 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A0AF24884CF3005E7E41 /* Data.swift */; };
 		F858A0B22488508D005E7E41 /* RubbishRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A0B12488508D005E7E41 /* RubbishRow.swift */; };
 		F858A0B524885156005E7E41 /* rubbishList.json in Resources */ = {isa = PBXBuildFile; fileRef = F858A0B424885156005E7E41 /* rubbishList.json */; };
+		F858A0B824885857005E7E41 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A0B724885857005E7E41 /* SearchBar.swift */; };
 		F89608FD248810DA00E86240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89608FC248810DA00E86240 /* AppDelegate.swift */; };
 		F89608FF248810DA00E86240 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89608FE248810DA00E86240 /* SceneDelegate.swift */; };
 		F8960901248810DA00E86240 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8960900248810DA00E86240 /* ContentView.swift */; };
@@ -29,6 +30,7 @@
 		F858A0AF24884CF3005E7E41 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F858A0B12488508D005E7E41 /* RubbishRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishRow.swift; sourceTree = "<group>"; };
 		F858A0B424885156005E7E41 /* rubbishList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rubbishList.json; sourceTree = "<group>"; };
+		F858A0B724885857005E7E41 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		F89608F9248810DA00E86240 /* JakieSmieci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JakieSmieci.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89608FC248810DA00E86240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F89608FE248810DA00E86240 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				F8960907248810DD00E86240 /* LaunchScreen.storyboard */,
 				F896090A248810DD00E86240 /* Info.plist */,
 				F8960904248810DD00E86240 /* Preview Content */,
+				F858A0B724885857005E7E41 /* SearchBar.swift */,
 			);
 			path = JakieSmieci;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				F858A0AE24884B84005E7E41 /* RubbishItem.swift in Sources */,
 				F89609192488183B00E86240 /* RubbishView.swift in Sources */,
 				F858A0B024884CF3005E7E41 /* Data.swift in Sources */,
+				F858A0B824885857005E7E41 /* SearchBar.swift in Sources */,
 				F8960901248810DA00E86240 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
