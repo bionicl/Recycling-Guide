@@ -24,6 +24,12 @@ struct ContentView: View {
                     .imageScale(.large)
                     Text("Historia")
                 }
+            RubbishView()
+                .tabItem {
+                    Image(systemName: "eyeglasses")
+                    .imageScale(.large)
+                    Text("Odpady")
+                }
         }
     }
 }
