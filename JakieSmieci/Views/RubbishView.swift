@@ -10,7 +10,15 @@ import SwiftUI
 
 struct RubbishView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(rubbishData, id: \._id) { rubbish in
+                RubbishRow(rubbish: rubbish)
+                    
+            }
+
+            
+            .navigationBarTitle(Text("Odpady"))
+        }
     }
 }
 

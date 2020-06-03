@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F858A0AE24884B84005E7E41 /* RubbishItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A0AD24884B84005E7E41 /* RubbishItem.swift */; };
+		F858A0B024884CF3005E7E41 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A0AF24884CF3005E7E41 /* Data.swift */; };
+		F858A0B22488508D005E7E41 /* RubbishRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A0B12488508D005E7E41 /* RubbishRow.swift */; };
+		F858A0B524885156005E7E41 /* rubbishList.json in Resources */ = {isa = PBXBuildFile; fileRef = F858A0B424885156005E7E41 /* rubbishList.json */; };
 		F89608FD248810DA00E86240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89608FC248810DA00E86240 /* AppDelegate.swift */; };
 		F89608FF248810DA00E86240 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89608FE248810DA00E86240 /* SceneDelegate.swift */; };
 		F8960901248810DA00E86240 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8960900248810DA00E86240 /* ContentView.swift */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F858A0AD24884B84005E7E41 /* RubbishItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishItem.swift; sourceTree = "<group>"; };
+		F858A0AF24884CF3005E7E41 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		F858A0B12488508D005E7E41 /* RubbishRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishRow.swift; sourceTree = "<group>"; };
+		F858A0B424885156005E7E41 /* rubbishList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rubbishList.json; sourceTree = "<group>"; };
 		F89608F9248810DA00E86240 /* JakieSmieci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JakieSmieci.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89608FC248810DA00E86240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F89608FE248810DA00E86240 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F858A0AA24884B22005E7E41 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F858A0AD24884B84005E7E41 /* RubbishItem.swift */,
+				F858A0AF24884CF3005E7E41 /* Data.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F858A0B624885180005E7E41 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F858A0B424885156005E7E41 /* rubbishList.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		F89608F0248810DA00E86240 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +91,8 @@
 		F89608FB248810DA00E86240 /* JakieSmieci */ = {
 			isa = PBXGroup;
 			children = (
+				F858A0B624885180005E7E41 /* Resources */,
+				F858A0AA24884B22005E7E41 /* Models */,
 				F896091A24881AEA00E86240 /* Rows */,
 				F8960917248814E500E86240 /* Views */,
 				F89608FC248810DA00E86240 /* AppDelegate.swift */,
@@ -101,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				F896091B24881AF800E86240 /* HistoryRow.swift */,
+				F858A0B12488508D005E7E41 /* RubbishRow.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -172,6 +200,7 @@
 				F8960909248810DD00E86240 /* LaunchScreen.storyboard in Resources */,
 				F8960906248810DD00E86240 /* Preview Assets.xcassets in Resources */,
 				F8960903248810DD00E86240 /* Assets.xcassets in Resources */,
+				F858A0B524885156005E7E41 /* rubbishList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,12 +211,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F858A0B22488508D005E7E41 /* RubbishRow.swift in Sources */,
 				F8960916248814DE00E86240 /* SearchView.swift in Sources */,
 				F89608FD248810DA00E86240 /* AppDelegate.swift in Sources */,
 				F896091C24881AF800E86240 /* HistoryRow.swift in Sources */,
 				F89609142488149000E86240 /* HistoryView.swift in Sources */,
 				F89608FF248810DA00E86240 /* SceneDelegate.swift in Sources */,
+				F858A0AE24884B84005E7E41 /* RubbishItem.swift in Sources */,
 				F89609192488183B00E86240 /* RubbishView.swift in Sources */,
+				F858A0B024884CF3005E7E41 /* Data.swift in Sources */,
 				F8960901248810DA00E86240 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

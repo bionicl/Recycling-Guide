@@ -12,7 +12,7 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             Text("Tu będzie ui szukania")
-            .navigationBarTitle(Text("Odpady"))
+            .navigationBarTitle(Text("Szukaj"))
         }
     }
 }
