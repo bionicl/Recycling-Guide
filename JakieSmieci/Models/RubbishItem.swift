@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public struct RubbishItem: Hashable, Codable {
     var _id: Int

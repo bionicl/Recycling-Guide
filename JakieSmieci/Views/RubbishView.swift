@@ -16,6 +16,7 @@ struct RubbishView: View {
             VStack {
                 SearchBar(text: $searchText)
                 List{
+
                     ForEach(rubbishData.filter {
                         self.searchText.isEmpty ? true : $0.Nazwa.lowercased().contains(self.searchText.lowercased())
                     }, id: \.self) { rubbish in

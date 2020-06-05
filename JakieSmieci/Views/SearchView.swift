@@ -9,16 +9,25 @@
 import SwiftUI
 
 struct SearchView: View {
+    @Binding var text: String
+    
     var body: some View {
+        
+        
         NavigationView {
-            Text("Tu będzie ui szukania")
-            .navigationBarTitle(Text("Szukaj"))
+            VStack {
+                MainSearchBar(text: $text)
+                RandomFact(factId: Int.random(in: 1..<rubbishData.count))
+                    .padding()
+                    Spacer()
+                .navigationBarTitle(Text("Szukaj"))
+            }
         }
     }
 }
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(text: .constant(""))
     }
 }

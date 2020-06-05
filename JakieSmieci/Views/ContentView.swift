@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            SearchView()
+            SearchView(text: .constant(""))
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                         .imageScale(.large)
