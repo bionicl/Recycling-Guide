@@ -19,14 +19,18 @@ struct RandomFact: View {
             Spacer()
             VStack {
                 Text(rubbishData[factId].Nazwa)
-                    .font(.none)
                     .bold()
-                HStack(alignment: .center) {
-                    Image(systemName: "trash.fill")
-                    .imageScale(.medium)
-                    Text(returnRubbishType())
-                    .padding(.top,4)
-                }
+                    .fixedSize(horizontal: false, vertical: true)
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+                    
+                
+                Image(systemName: "arrow.down.circle.fill")
+                .imageScale(.medium)
+                    .foregroundColor(Color(.white).opacity(0.5))
+                Text(returnRubbishType())
+                .padding(.top,4)
+                    .font(.subheadline)
             }
             .padding()
             .foregroundColor(.white)
@@ -59,9 +63,15 @@ struct RandomFact: View {
         
             case "Elektrośmieci":
                 return "Wielkogabarytowe"
+        
+            case "Zielone":
+                return "Zielone"
+        
+            case "Inne":
+                return "Inne"
 
-           default:
-               return "none: " + rubbishData[factId].Typ
+            default:
+                return "none: " + rubbishData[factId].Typ
         }
     }
     
@@ -87,13 +97,19 @@ struct RandomFact: View {
         
             case "Elektrośmieci":
                 return 6
+        
+            case "Zielone":
+                return 7
+        
+            case "Inne":
+                return 8
 
-           default:
-               return 7
+            default:
+                return 9
         }
     }
     
-    let rubbishTypeColors = [Color(.black), Color(.systemGreen), Color(.brown), Color(.systemOrange), Color(.systemBlue), Color(.systemGray), Color(.systemGray), Color(.systemBlue), Color(.systemBlue)]
+    let rubbishTypeColors = [Color(.black), Color(.systemGreen), Color(.brown), Color(.systemOrange), Color(.systemBlue), Color(.systemGray), Color(.systemGray), Color(.systemGreen), Color(.systemGray), Color(.systemGray)]
 }
 
 struct RandomFact_Previews: PreviewProvider {

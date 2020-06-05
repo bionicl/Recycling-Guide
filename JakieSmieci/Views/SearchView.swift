@@ -14,15 +14,22 @@ struct SearchView: View {
     var body: some View {
         
         
-        NavigationView {
-            VStack {
-                MainSearchBar(text: $text)
-                RandomFact(factId: Int.random(in: 1..<rubbishData.count))
-                    .padding()
-                    Spacer()
-                .navigationBarTitle(Text("Szukaj"))
+            
+            NavigationView {
+                ZStack {
+                    Color.red
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    MainSearchBar(text: $text)
+                    RandomFact(factId: Int.random(in: 1..<rubbishData.count))
+                        .padding()
+                        Spacer()
+                    .navigationBarTitle(Text("Szukaj"))
+                    
+                }
+                }
             }
-        }
+        
     }
 }
 
