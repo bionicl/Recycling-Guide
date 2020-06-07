@@ -14,7 +14,7 @@ struct RubbishView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(text: $searchText)
+                SearchBar(searchText: $searchText)
                 List{
 
                     ForEach(rubbishData.filter {
@@ -23,8 +23,7 @@ struct RubbishView: View {
                         RubbishRow(rubbish: rubbish)
                     }
                 }
-
-            
+                .resignKeyboardOnDragGesture()
                 .navigationBarTitle(Text("Odpady"))
             }
         }
