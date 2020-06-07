@@ -10,35 +10,63 @@ import SwiftUI
 
 
 
-struct RandomFact: View {
+struct CardView: View {
     var factId: Int = Int.random(in: 1..<rubbishData.count)
     
     var body: some View {
-        
         HStack {
-            Spacer()
-            VStack {
-                Text(rubbishData[factId].Nazwa)
-                    .bold()
-                    .fixedSize(horizontal: false, vertical: true)
-                    .font(.headline)
-                    .multilineTextAlignment(.center)
-                    
-                
-                Image(systemName: "arrow.down.circle.fill")
-                .imageScale(.medium)
-                    .foregroundColor(Color(.white).opacity(0.5))
-                Text(returnRubbishType())
-                .padding(.top,4)
+            VStack (alignment: .leading){
+                Text("Folia spożywcza")
+                    .font(.)
+                    .fontWeight(.medium)
+                    .foregroundColor(.primary)
+                    .padding(0)
+                HStack {
+                    Image(systemName: "arrow.down.circle.fill")
+                        .imageScale(.small)
+                        .padding(.vertical, 0)
+                    Text("wyrzuć do")
+                        .font(.caption)
+                }
+                .foregroundColor(.gray)
+                Text("Pojemnika na metale i tworzywa sztuczne")
                     .font(.subheadline)
             }
-            .padding()
-            .foregroundColor(.white)
-            .background(rubbishTypeColors[returnRubbishId()])
-            .cornerRadius(20)
-            .padding()
+            
+            
             Spacer()
         }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(10)
+        .padding(.top)
+        .padding(.horizontal)
+        .shadow(color: Color(.systemGray5), radius: 5)
+        
+        
+//        HStack {
+//            VStack {
+//
+//                Text(rubbishData[factId].Nazwa)
+//                    .bold()
+//                    .fixedSize(horizontal: false, vertical: true)
+//                    .font(.headline)
+//                    .multilineTextAlignment(.center)
+//
+//
+//                Image(systemName: "arrow.down.circle.fill")
+//                .imageScale(.medium)
+//                    .foregroundColor(Color(.white).opacity(0.5))
+//                Text(returnRubbishType())
+//                .padding(.top,4)
+//                    .font(.subheadline)
+//            }
+//            .padding()
+//            .foregroundColor(.white)
+//            .background(rubbishTypeColors[returnRubbishId()])
+//            .cornerRadius(20)
+//            .padding()
+//        }
     }
     
     func returnRubbishType() -> String {
@@ -114,6 +142,6 @@ struct RandomFact: View {
 
 struct RandomFact_Previews: PreviewProvider {
     static var previews: some View {
-        RandomFact(factId: Int.random(in: 1..<rubbishData.count))
+        CardView(factId: Int.random(in: 1..<rubbishData.count))
     }
 }

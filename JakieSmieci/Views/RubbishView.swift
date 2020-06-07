@@ -25,6 +25,11 @@ struct RubbishView: View {
                 }
                 .resignKeyboardOnDragGesture()
                 .navigationBarTitle(Text("Odpady"))
+                .navigationBarItems(trailing:
+                    Button("Help") {
+                        print("Help tapped!")
+                    }
+                )
             }
         }
     }

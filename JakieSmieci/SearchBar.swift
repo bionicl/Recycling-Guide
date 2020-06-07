@@ -10,7 +10,6 @@ import Foundation
 import SwiftUI
 
 struct SearchBar: View {
-
     @Binding var searchText: String
     @State private var showCancelButton: Bool = false
     var onCommit: () ->Void = {print("onCommit")}
@@ -23,7 +22,7 @@ struct SearchBar: View {
                 // Search text field
                 ZStack (alignment: .leading) {
                     if searchText.isEmpty { // Separate text for placeholder to give it the proper color
-                        Text("Search")
+                        Text("Szukaj śmieci...")
                     }
                     TextField("", text: $searchText, onEditingChanged: { isEditing in
                         self.showCancelButton = true
@@ -77,5 +76,11 @@ struct ResignKeyboardOnDragGesture: ViewModifier {
 extension View {
     func resignKeyboardOnDragGesture() -> some View {
         modifier(ResignKeyboardOnDragGesture())
+    }
+}
+
+struct SearchBar_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchBar(searchText: .constant(""))
     }
 }

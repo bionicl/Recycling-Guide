@@ -24,7 +24,7 @@
 		F89609192488183B00E86240 /* RubbishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89609182488183B00E86240 /* RubbishView.swift */; };
 		F896091C24881AF800E86240 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F896091B24881AF800E86240 /* HistoryRow.swift */; };
 		F8C23736248ACE720073BBD5 /* MainSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C23735248ACE720073BBD5 /* MainSearchBar.swift */; };
-		F8C23738248AD62C0073BBD5 /* RandomFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C23737248AD62C0073BBD5 /* RandomFact.swift */; };
+		F8C23738248AD62C0073BBD5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C23737248AD62C0073BBD5 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		F89609182488183B00E86240 /* RubbishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishView.swift; sourceTree = "<group>"; };
 		F896091B24881AF800E86240 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 		F8C23735248ACE720073BBD5 /* MainSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSearchBar.swift; sourceTree = "<group>"; };
-		F8C23737248AD62C0073BBD5 /* RandomFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomFact.swift; sourceTree = "<group>"; };
+		F8C23737248AD62C0073BBD5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 				F8960904248810DD00E86240 /* Preview Content */,
 				F858A0B724885857005E7E41 /* SearchBar.swift */,
 				F8C23735248ACE720073BBD5 /* MainSearchBar.swift */,
-				F8C23737248AD62C0073BBD5 /* RandomFact.swift */,
+				F8C23737248AD62C0073BBD5 /* CardView.swift */,
 			);
 			path = JakieSmieci;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 				F8C23736248ACE720073BBD5 /* MainSearchBar.swift in Sources */,
 				F89608FD248810DA00E86240 /* AppDelegate.swift in Sources */,
 				F896091C24881AF800E86240 /* HistoryRow.swift in Sources */,
-				F8C23738248AD62C0073BBD5 /* RandomFact.swift in Sources */,
+				F8C23738248AD62C0073BBD5 /* CardView.swift in Sources */,
 				F89609142488149000E86240 /* HistoryView.swift in Sources */,
 				F89608FF248810DA00E86240 /* SceneDelegate.swift in Sources */,
 				F858A0AE24884B84005E7E41 /* RubbishItem.swift in Sources */,

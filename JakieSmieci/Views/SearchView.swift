@@ -14,75 +14,41 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView {
-            
-            VStack {
-                // Search view
-                SearchBar(searchText: $searchText)
-                ZStack {
-                    Color(.systemGray6) // <----
-                    .edgesIgnoringSafeArea(.all)
-                    VStack {
-                        
-                        // Content
-                        Text("Masz wątpliwości?")
-                            .font(.title)
-                            .bold()
-                        Text("Wpisz w wyszukiwarce odpady, które wzbudzają Twoje wątpliwości i dowiedz się gdzie należy je wyrzucić.")
-                            .multilineTextAlignment(.center)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding()
-                        MainSearchBar(text: $searchText)
-                            .padding(.horizontal)
-                        Text("lub")
-                            .multilineTextAlignment(.center)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding()
-                            
-                        Button(action: {
-                            print("Delete tapped!")
-                        }) {
-                            HStack {
-                                Image(systemName: "questionmark.circle.fill")
-                                    .font(.body)
-                                    .foregroundColor(.green)
-                                Text("Sprawdź zasady segregacji")
-                                    .font(.body)
-                                .foregroundColor(.green)
-                            }
-                            .padding(12)
-                            .foregroundColor(.white)
-                            .background(Color(.systemBackground))
-                            .cornerRadius(12)
-                            }
-                        .padding(.bottom, 100)
-                            
-                            
-                            
-                        .navigationBarItems(trailing:
-                            Button(action: {
-                                self.showingDetail.toggle()
-                            }) {
-                                HStack {
-                                    Image(systemName: "clock.fill")
-                                        .imageScale(.large)
-                                    Text("Historia")
-                                }
-                            }
-                        )
-                            
-                        .navigationBarTitle(Text("Gdzie te śmieci"))
-                        .sheet(isPresented: $showingDetail) {
-                            HistoryView(showSheetView: self.$showingDetail)
-                        }
-                            
-                        
-                    }
-                    .accentColor(.green)
+            VStack(spacing: 0) {
+                VStack {
+                    SearchBar(searchText: $searchText)
+                        .background(Color(.white))
+                    Rectangle()
+                    .frame(height: 1)
+                        .foregroundColor(Color(.systemGray4))
+                    .padding(.bottom, 0)
                 }
+                .background(Color(.white))
+                
+                ScrollView {
+                    CardView(factId: 0)
+                    CardView(factId: 1)
+                    CardView(factId: 2)
+                }
+                
             }
-            
-            
+            .background(Color(.systemGray6))
+                
+            .navigationBarTitle(Text("Gdzie te śmieci"))
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.showingDetail.toggle()
+                }) {
+                    HStack {
+                        Image(systemName: "clock.fill")
+                            .imageScale(.large)
+                        Text("Historia")
+                    }
+                }
+            )
+            .edgesIgnoringSafeArea(.bottom)
         }
+        
         .accentColor(.green)
         
         
