@@ -15,12 +15,11 @@ struct MainSearchBar: View {
     
     var body: some View {
         HStack {
-            TextField("Szukaj śmieci", text: $text)
+            TextField("Gdzie wyrzucić...", text: $text)
                 .padding(8)
                 .padding(.horizontal, 8)
                 .background(Color(.systemGray6))
                     .cornerRadius(8)
-                .padding(16)
         }
         
         

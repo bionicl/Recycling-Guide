@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @Binding var showSheetView: Bool
+    
     var body: some View {
         NavigationView {
             List {
@@ -16,13 +18,19 @@ struct HistoryView: View {
                 HistoryRow()
                 HistoryRow()
             }
-            .navigationBarTitle(Text("Historia"))
+            .navigationBarTitle(Text("Historia"), displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: {
+                print("Dismissing sheet view...")
+                self.showSheetView = false;
+            }) {
+                Text("Gotowe").bold()
+            })
         }
     }
 }
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+        HistoryView(showSheetView: .constant(true))
     }
 }

@@ -10,27 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            SearchView(text: .constant(""))
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                        .imageScale(.large)
-                    Text("Wyszukaj")
-                }
-
-            HistoryView()
-                .tabItem {
-                    Image(systemName: "clock.fill")
-                    .imageScale(.large)
-                    Text("Historia")
-                }
-            RubbishView()
-                .tabItem {
-                    Image(systemName: "eyeglasses")
-                    .imageScale(.large)
-                    Text("Odpady")
-                }
-        }
+        SearchView(searchText: .constant(""))
     }
 }
 

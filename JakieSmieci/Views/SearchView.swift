@@ -9,52 +9,82 @@
 import SwiftUI
 
 struct SearchView: View {
-    @Binding var text: String
+    @Binding var searchText: String
     @State var showingDetail = false
     
     var body: some View {
-            NavigationView {
+        NavigationView {
+            ZStack {
+                Color.green // <----
+                .edgesIgnoringSafeArea(.all)
                 VStack {
-                    MainSearchBar(text: $text)
-                    .contextMenu {
-                        Button("Love it: 💕") {
-                            self.showingDetail.toggle()
-                        }
-                        Button("Thoughtful: 🙏") {}
-                        Button("Wow!: 🌟") {}
-                    }
-                    
-                    Button(action: {
-                        self.showingDetail.toggle()
-                    }) {
-                    RandomFact(factId: Int.random(in: 1..<rubbishData.count))
+                    Text("Masz wątpliwości?")
+                        .font(.title)
+                        .bold()
+                    Text("Wpisz w wyszukiwarce odpady, które wzbudzają Twoje wątpliwości i dowiedz się gdzie należy je wyrzucić.")
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
                         .padding()
-                    }
-                        Spacer()
-                    .navigationBarTitle(Text("Szukaj"))
+                    MainSearchBar(text: $searchText)
+                        .padding(.horizontal)
+                    Text("lub")
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding()
+                        
+                    Button(action: {
+                        print("Delete tapped!")
+                    }) {
+                        HStack {
+                            Image(systemName: "questionmark.circle.fill")
+                                .font(.body)
+                                .foregroundColor(.green)
+                            Text("Sprawdź zasady segregacji")
+                                .font(.body)
+                            .foregroundColor(.green)
+                        }
+                        .padding(12)
+                        .foregroundColor(.white)
+                        .background(Color(.systemBackground))
+                        .cornerRadius(12)
+                        }
+                    .padding(.bottom, 100)
+                        
+                        
+                        
                     .navigationBarItems(trailing:
                         Button(action: {
                             self.showingDetail.toggle()
                         }) {
                             HStack {
-                                Text("Historia")
                                 Image(systemName: "clock.fill")
                                     .imageScale(.large)
+                                Text("Historia")
                             }
                         }
                     )
                     .sheet(isPresented: $showingDetail) {
-                        HistoryView()
+                        HistoryView(showSheetView: self.$showingDetail)
                     }
+                        
+                    
                 }
-                
+                .accentColor(.green)
             }
-        .accentColor(.green)
+            
+        }
+        .accentColor(.white)
     }
 }
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(text: .constant(""))
+        
+        Group {
+            SearchView(searchText: .constant(""))
+                .previewDevice(PreviewDevice(rawValue: "iPhone X"))
+            SearchView(searchText: .constant(""))
+                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+        }
     }
 }
