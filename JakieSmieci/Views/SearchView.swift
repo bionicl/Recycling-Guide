@@ -10,26 +10,46 @@ import SwiftUI
 
 struct SearchView: View {
     @Binding var text: String
+    @State var showingDetail = false
     
     var body: some View {
-        
-        
-            
             NavigationView {
-                ZStack {
-                    Color.red
-                    .edgesIgnoringSafeArea(.all)
                 VStack {
                     MainSearchBar(text: $text)
+                    .contextMenu {
+                        Button("Love it: 💕") {
+                            self.showingDetail.toggle()
+                        }
+                        Button("Thoughtful: 🙏") {}
+                        Button("Wow!: 🌟") {}
+                    }
+                    
+                    Button(action: {
+                        self.showingDetail.toggle()
+                    }) {
                     RandomFact(factId: Int.random(in: 1..<rubbishData.count))
                         .padding()
+                    }
                         Spacer()
                     .navigationBarTitle(Text("Szukaj"))
-                    
+                    .navigationBarItems(trailing:
+                        Button(action: {
+                            self.showingDetail.toggle()
+                        }) {
+                            HStack {
+                                Text("Historia")
+                                Image(systemName: "clock.fill")
+                                    .imageScale(.large)
+                            }
+                        }
+                    )
+                    .sheet(isPresented: $showingDetail) {
+                        HistoryView()
+                    }
                 }
-                }
+                
             }
-        
+        .accentColor(.green)
     }
 }
 
