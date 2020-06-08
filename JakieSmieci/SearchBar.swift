@@ -11,7 +11,7 @@ import SwiftUI
 
 struct SearchBar: View {
     @Binding var searchText: String
-    @State private var showCancelButton: Bool = false
+    @Binding var showCancelButton: Bool
     var onCommit: () ->Void = {print("test")}
     
     var body: some View {
@@ -48,11 +48,12 @@ struct SearchBar: View {
                     self.showCancelButton = false
                 }
                 .foregroundColor(Color(.systemBlue))
+                .transition(.slide)
             }
         }
         .padding(.horizontal)
         .navigationBarHidden(showCancelButton)
-        .transition(.scale)
+        .transition(.slide)
     }
     
     
@@ -87,6 +88,6 @@ extension View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(searchText: .constant(""))
+        SearchBar(searchText: .constant(""), showCancelButton: .constant(false))
     }
 }

@@ -12,20 +12,13 @@ struct HistoryView: View {
     @Binding var showSheetView: Bool
     
     var body: some View {
-        NavigationView {
-            List {
-                HistoryRow()
-                HistoryRow()
-                HistoryRow()
+        List {
+            Section(header: Text("Ostatnie wyszukiwania")) {
+                RubbishRow(rubbish: rubbishData[0])
+                RubbishRow(rubbish: rubbishData[1])
             }
-            .navigationBarTitle(Text("Historia"), displayMode: .inline)
-            .navigationBarItems(trailing: Button(action: {
-                print("Dismissing sheet view...")
-                self.showSheetView = false;
-            }) {
-                Text("Gotowe").bold()
-            })
         }
+            
     }
 }
 

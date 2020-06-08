@@ -14,7 +14,6 @@ struct RubbishView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(searchText: $searchText)
                 List{
 
                     ForEach(rubbishData.filter {

@@ -10,20 +10,21 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText = ""
+    @State private var showCancelButton = false
     @State var showingDetail = false
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
                 VStack {
-                    SearchBar(searchText: $searchText)
-                        .background(Color(.white))
+                    SearchBar(searchText: $searchText, showCancelButton: $showCancelButton)
+                        .background(Color(.systemBackground))
                     Rectangle()
                     .frame(height: 1)
                         .foregroundColor(Color(.systemGray4))
                     .padding(.bottom, 0)
                 }
-                .background(Color(.white))
+                .background(Color(.systemBackground))
                 if (self.searchText.count > 0) {
                     VStack {
                         // Filtered list of nam
@@ -37,11 +38,15 @@ struct SearchView: View {
                         .id(UUID())
                         .resignKeyboardOnDragGesture()
                     }
+                } else if (self.showCancelButton) {
+                    HistoryView(showSheetView: .constant(false))
                 } else {
-                    ScrollView {
-                        CardView(factId: 0)
-                        CardView(factId: 1)
-                        CardView(factId: 2)
+                    ScrollView() {
+                        Spacer()
+                        Spacer()
+                        CardView(factId: 30)
+                        CardView(factId: 12)
+                        CardView(factId: 252)
                     }
                         .background(Color(.systemGray6))
                 }
@@ -53,11 +58,8 @@ struct SearchView: View {
                 Button(action: {
                     self.showingDetail.toggle()
                 }) {
-                    HStack {
-                        Image(systemName: "clock.fill")
-                            .imageScale(.large)
-                        Text("Historia")
-                    }
+                    Image(systemName: "info.circle.fill")
+                    .imageScale(.large)
                 }
             )
             .edgesIgnoringSafeArea(.bottom)
@@ -72,12 +74,8 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        Group {
-            SearchView()
-                .previewDevice(PreviewDevice(rawValue: "iPhone X"))
-            SearchView()
-                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
-        }
+        SearchView()
+        .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+            //.environment(\.colorScheme, .dark)
     }
 }

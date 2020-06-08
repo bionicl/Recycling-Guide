@@ -22,24 +22,38 @@ struct CardView: View {
                     .foregroundColor(.primary)
                     .padding(0)
                 HStack {
-                    Image(systemName: "arrow.down.circle.fill")
-                        .imageScale(.small)
-                        .padding(.vertical, 0)
-                    Text("wyrzuć do")
-                        .font(.caption)
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Image(systemName: "arrow.down.circle.fill")
+                                .imageScale(.small)
+                                .padding(.vertical, 0)
+                            Text("wyrzuć do")
+                                .font(.caption)
+                        }
+                        .foregroundColor(.gray)
+                        Text("Pojemnika na " + returnRubbishType())
+                        .font(.subheadline)
+                    }
+                    Spacer()
+
                 }
-                .foregroundColor(.gray)
-                Text("Pojemnika na " + returnRubbishType())
-                    .font(.subheadline)
+                
             }
             
             
             Spacer()
+            Circle()
+            .frame(width: 50, height: 50)
+            .foregroundColor(rubbishTypeColors[returnRubbishId()])
+            .overlay(
+                Image(systemName: "trash.fill")
+                    .imageScale(.large)
+                    .foregroundColor(.white)
+            )
         }
         .padding()
         .background(Color(.systemBackground))
         .cornerRadius(10)
-        .padding(.top)
         .padding(.horizontal)
         .shadow(color: Color(.systemGray5), radius: 5)
         
