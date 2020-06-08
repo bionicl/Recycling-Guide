@@ -18,7 +18,7 @@ struct RubbishView: View {
                 List{
 
                     ForEach(rubbishData.filter {
-                        self.searchText.isEmpty ? true : $0.Nazwa.lowercased().contains(self.searchText.lowercased())
+                        $0.contains(search: self.searchText)
                     }, id: \.self) { rubbish in
                         RubbishRow(rubbish: rubbish)
                     }

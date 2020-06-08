@@ -16,8 +16,8 @@ struct CardView: View {
     var body: some View {
         HStack {
             VStack (alignment: .leading){
-                Text("Folia spożywcza")
-                    .font(.)
+                Text(rubbishData[factId].Nazwa)
+                    .font(.body)
                     .fontWeight(.medium)
                     .foregroundColor(.primary)
                     .padding(0)
@@ -29,7 +29,7 @@ struct CardView: View {
                         .font(.caption)
                 }
                 .foregroundColor(.gray)
-                Text("Pojemnika na metale i tworzywa sztuczne")
+                Text("Pojemnika na " + returnRubbishType())
                     .font(.subheadline)
             }
             
@@ -72,31 +72,31 @@ struct CardView: View {
     func returnRubbishType() -> String {
        switch rubbishData[factId].Typ {
             case "Zmieszane":
-                return "Zmieszane"
+                return "śmieci zmieszane"
 
             case "Szkło":
-                return "Szkło"
+                return "szkło"
 
             case "Bio":
-                return "Biodegradowalne"
+                return "biodegradowalne"
         
             case "Plastik i metal":
-                return "Plastik i metal"
+                return "plastik i metal"
         
             case "Papier":
-                return "Papier"
+                return "papier"
         
             case "Gabaryty":
-                return "Wielkogabarytowe"
+                return "wielkogabarytowe"
         
             case "Elektrośmieci":
-                return "Wielkogabarytowe"
+                return "elektrośmieci"
         
             case "Zielone":
-                return "Zielone"
+                return "zielone"
         
             case "Inne":
-                return "Inne"
+                return "inne"
 
             default:
                 return "none: " + rubbishData[factId].Typ

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SearchView: View {
-    @Binding var searchText: String
+    @State private var searchText = ""
     @State var showingDetail = false
     
     var body: some View {
@@ -24,15 +24,28 @@ struct SearchView: View {
                     .padding(.bottom, 0)
                 }
                 .background(Color(.white))
-                
-                ScrollView {
-                    CardView(factId: 0)
-                    CardView(factId: 1)
-                    CardView(factId: 2)
+                if (self.searchText.count > 0) {
+                    VStack {
+                        // Filtered list of nam
+                        List {
+                            ForEach(rubbishData.filter {
+                                $0.contains(search: self.searchText)
+                            }, id: \.self) { rubbish in
+                                RubbishRow(rubbish: rubbish)
+                            }
+                        }
+                    }
+                } else {
+                    ScrollView {
+                        CardView(factId: 0)
+                        CardView(factId: 1)
+                        CardView(factId: 2)
+                    }
+                        .background(Color(.systemGray6))
                 }
                 
             }
-            .background(Color(.systemGray6))
+            
                 
             .navigationBarTitle(Text("Gdzie te śmieci"))
             .navigationBarItems(trailing:
@@ -59,9 +72,9 @@ struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         
         Group {
-            SearchView(searchText: .constant(""))
+            SearchView()
                 .previewDevice(PreviewDevice(rawValue: "iPhone X"))
-            SearchView(searchText: .constant(""))
+            SearchView()
                 .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
         }
     }

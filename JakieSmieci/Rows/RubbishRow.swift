@@ -15,7 +15,7 @@ struct RubbishRow: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(rubbish.Nazwa)
-                Text("Odpady zmieszane")
+                Text(rubbish.Typ)
                     .font(.caption)
                     .foregroundColor(.gray)
             }
