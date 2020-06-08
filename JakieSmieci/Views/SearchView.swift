@@ -13,6 +13,8 @@ struct SearchView: View {
     @State private var showCancelButton = false
     @State var showingDetail = false
     
+    let featuredIds = [50, 120, 210, 530, 600]
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -39,16 +41,22 @@ struct SearchView: View {
                         .resignKeyboardOnDragGesture()
                     }
                 } else if (self.showCancelButton) {
-                    HistoryView(showSheetView: .constant(false))
+                    HistoryView()
                 } else {
                     ScrollView() {
                         Spacer()
                         Spacer()
-                        CardView(factId: 30)
-                        CardView(factId: 12)
-                        CardView(factId: 252)
+                        
+                        ForEach(featuredIds, id: \.self) { item in
+                            NavigationLink(destination: DetailedView()) {
+                                CardView(factId: item)
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                            }
+                        }
                     }
-                        .background(Color(.systemGray6))
+                        
+                    .background(Color(.systemGray6))
                 }
                 
             }
@@ -64,9 +72,6 @@ struct SearchView: View {
             )
             .edgesIgnoringSafeArea(.bottom)
         }
-            
-        
-        .accentColor(.green)
         
         
     }

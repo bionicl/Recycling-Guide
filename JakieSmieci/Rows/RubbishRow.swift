@@ -12,17 +12,15 @@ struct RubbishRow: View {
     var rubbish : RubbishItem
     
     var body: some View {
-        HStack {
+        NavigationLink(destination: DetailedView()) {
             VStack(alignment: .leading) {
                 Text(rubbish.Nazwa)
                 Text(rubbish.Typ)
                     .font(.caption)
                     .foregroundColor(.gray)
             }
-            Spacer()
-            Image(systemName: "chevron.right")
-                .foregroundColor(.gray)
         }
+        
     }
 }
 

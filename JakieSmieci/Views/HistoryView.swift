@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @Binding var showSheetView: Bool
     
     var body: some View {
         List {
@@ -24,6 +23,6 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView(showSheetView: .constant(true))
+        HistoryView()
     }
 }

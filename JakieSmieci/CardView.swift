@@ -33,6 +33,7 @@ struct CardView: View {
                         .foregroundColor(.gray)
                         Text("Pojemnika na " + returnRubbishType())
                         .font(.subheadline)
+                            .foregroundColor(.primary)
                     }
                     Spacer()
 
@@ -53,9 +54,7 @@ struct CardView: View {
         }
         .padding()
         .background(Color(.systemBackground))
-        .cornerRadius(10)
-        .padding(.horizontal)
-        .shadow(color: Color(.systemGray5), radius: 5)
+        
         
         
 //        HStack {
