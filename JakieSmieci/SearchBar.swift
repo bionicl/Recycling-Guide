@@ -52,8 +52,14 @@ struct SearchBar: View {
         }
         .padding(.horizontal)
         .navigationBarHidden(showCancelButton)
+        .transition(.scale)
     }
+    
+    
+    
 }
+
+
 
 extension UIApplication {
     func endEditing(_ force: Bool) {

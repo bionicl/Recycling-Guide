@@ -9,23 +9,15 @@
 import Foundation
 import UIKit
 
-public struct RubbishItem: Hashable, Codable {
+struct RubbishItem: Hashable, Codable {
     var _id: Int
     var Identyfikator: Int
     var Nazwa: String
     fileprivate var Synonim: String
     var Typ: String
-
+    
     var names: [String] {
-        get {
-            let arr = Synonim.split(separator: ",")
-            var output = [String]()
-            output.append(Nazwa.lowercased())
-            for item in arr {
-                output.append(item.trimmingCharacters(in: .whitespacesAndNewlines).lowercased())
-            }
-            return output
-        }
+        returnNames(synonim: Synonim)
     }
     
     enum TrashType: String, CaseIterable, Codable, Hashable {
@@ -45,4 +37,13 @@ public struct RubbishItem: Hashable, Codable {
         return false
     }
 
+    func returnNames(synonim : String) -> [String] {
+        let arr = self.Synonim.split(separator: ",")
+        var output = [String]()
+        output.append(self.Nazwa.lowercased())
+        for item in arr {
+            output.append(item.trimmingCharacters(in: .whitespacesAndNewlines).lowercased())
+        }
+        return output
+    }
 }

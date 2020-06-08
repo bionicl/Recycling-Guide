@@ -34,6 +34,8 @@ struct SearchView: View {
                                 RubbishRow(rubbish: rubbish)
                             }
                         }
+                        .id(UUID())
+                        .resignKeyboardOnDragGesture()
                     }
                 } else {
                     ScrollView {
@@ -45,8 +47,7 @@ struct SearchView: View {
                 }
                 
             }
-            
-                
+
             .navigationBarTitle(Text("Gdzie te śmieci"))
             .navigationBarItems(trailing:
                 Button(action: {
@@ -61,6 +62,7 @@ struct SearchView: View {
             )
             .edgesIgnoringSafeArea(.bottom)
         }
+            
         
         .accentColor(.green)
         
