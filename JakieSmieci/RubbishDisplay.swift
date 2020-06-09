@@ -14,6 +14,42 @@ public class RubbishDisplay {
     
     static let rubbishTypeColors = [Color(red: 0.1, green: 0.1, blue: 0.1), Color(.systemGreen), Color(.brown), Color(.systemOrange), Color(.systemBlue), Color(.systemGray), Color(.systemGray), Color(.systemGreen), Color(.systemGray), Color(.systemGray)]
     
+    static let description = [
+        "Do pojemnika na odpady zmieszane wrzucaj tylko to, czego nie udało się rozdzielić do pojemników na odpady segregowane lub czego nie można oddać do PSZOK-u lub MPSZOK-u.",
+        "",
+        "Pamiętaj, że chodzi o bioodpady pochodzące z gospodarstw domowych.",
+        "",
+        "",
+        "Zapytaj swojego administratora, gdzie znajdziesz miejsce przeznaczone do gromadzenia odpadów wielkogabarytowych.",
+        "Zużyty sprzęt elektryczny oraz elektroniczny zanieść do punktu zbiórki zużytego elektrycznego i elektronicznego.",
+        "Odbierane są od marca do listopada.",
+        "Pozostałe odpady komunalne przeznaczone do unieszkodliwienia lub odzysku możesz oddać do Punktu Selektywnego Zbierania Odpadów Komunalnych."
+    ]
+    
+    static let rulesDo = [
+        "Resztki mięsne oraz kości, mokry lub zabrudzony papier, zużyte materiały higieniczne, w tym pieluchy jednorazowe, żwirek z kuwet dla zwierząt, fajans, potłuczone szyby i lustra, tekstylia",
+        "Opakowania szklane, w szczególności: puste butelki, słoiki, opakowania po kosmetykach, puste opakowania po lekach",
+        "Odpadki warzywne i owocowe, skorupki jaj, fusy po kawie i herbacie, zwiędłe kwiaty oraz rośliny doniczkowe, resztki jedzenia bez mięsa, kości oraz tłuszczów zwierzęcych",
+        "Puste, zgniecione butelki plastikowe, zakrętki od butelek i słoików, plastikowe opakowania, torebki, worki foliowe, kartony po sokach i mleku (tzw. tetrapaki), zgniecione puszki po napojach i żywności",
+        "Czyste opakowania z papieru i tektury, gazety, czasopisma i ulotki, kartony, zeszyty, papier biurowy",
+        "Stare meble (także rozłożone na części) oraz wyroby tapicerskie (np. fotele, wersalki, pufy), materace, zabawki dużych rozmiarów",
+        "",
+        "Liście, skoszona trawa, rozdrobnione gałęzie",
+        ""
+    ]
+    
+    static let rulesDont = [
+        "Sprzęt elektryczny oraz elektroniczny, AGD, baterie i akumulatory, odpady budowlane i remontowe, odpady zielone, leki oraz chemikalia",
+        "Szkło stołowe, ceramika, wyroby ze szkła żaroodpornego, szkło okienne, lustra, szyby, żarówki, świetlówki, porcelana",
+        "Resztki mięsne, kości oraz tłuszcze zwierzęce, olej jadalny, ziemia i kamienie, odchody zwierząt",
+        "Zużyte baterie i akumulatory, sprzęt elektryczny oraz elektroniczny, puszki i pojemniki po farbach, butelki po olejach samochodowych, opakowania po aerozolach, opakowania po olejach silnikowych, zatłuszczony styropian po żywności",
+        "Zatłuszczone opakowania z papieru, zużyte ręczniki papierowe i chusteczki",
+        "Sprzęt elektryczny oraz elektroniczny (np.: stare pralki, lodówki), materiały i odpady budowlane, remontowe, wanny, umywalki, grzejniki, muszle toaletowe, ramy okienne, drzwi, niesprasowane, duże kartony, opony samochodowe",
+        "",
+        "Kamienie, popiół, ziemia",
+        ""
+    ]
+    
     static func returnRubbishType(rubbish : RubbishItem) -> String {
        switch rubbish.Typ {
             case "Zmieszane":
@@ -78,7 +114,7 @@ public class RubbishDisplay {
                 return 8
 
             default:
-                return 9
+                return 8
         }
     }
     

@@ -71,29 +71,44 @@ struct DetailedView: View {
                             .background(colorScheme == .dark ? Color(.systemGray6) : Color(.systemBackground))
                             .cornerRadius(10)
                         .padding(.horizontal)
+                        .accentColor(Color(.systemBlue))
                     }
                     Spacer()
                     Spacer()
                     VStack(alignment: .leading) {
-                        Text("Śmieci zmieszane")
-                            .font(.headline)
-                            .padding(.bottom)
-                        Text("Do pojemnika na odpady zmieszane wrzucaj tylko to, czego nie udało się rozdzielić do pojemników na odpady segregowane lub czego nie można oddać do PSZOK-u lub MPSZOK-u.")
-                        Text("Wrzucaj:")
-                            .foregroundColor(Color(.systemGreen))
-                            .font(.headline)
-                            .padding(.vertical)
-                        Text("Czyste opakowania z papieru i tektury, gazety, czasopisma i ulotki, kartony, zeszyty, papier biurowy")
-                            .lineLimit(nil)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                        Text("Nie wrzucaj:")
-                        .foregroundColor(Color(.systemRed))
-                        .font(.headline)
-                        .padding(.vertical)
-                        Text("Sprzęt elektryczny oraz elektroniczny, AGD, baterie i akumulatory, odpady budowlane i remontowe, odpady zielone, leki oraz chemikalia")
-                        .lineLimit(nil)
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        if (RubbishDisplay.description[RubbishDisplay.returnRubbishId(rubbish: rubbish)] != "") {
+                            Text(RubbishDisplay.description[RubbishDisplay.returnRubbishId(rubbish: rubbish)])
+                                .lineLimit(nil)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            
+                        }
                         
+                        if (RubbishDisplay.rulesDo[RubbishDisplay.returnRubbishId(rubbish: rubbish)] != "") {
+                            HStack {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .imageScale(.medium)
+                                Text("Wrzucaj:")
+                                    .font(.headline)
+                                    
+                            }
+
+                            Text(RubbishDisplay.rulesDo[RubbishDisplay.returnRubbishId(rubbish: rubbish)])
+                                .lineLimit(nil)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        }
+                        if (RubbishDisplay.rulesDont[RubbishDisplay.returnRubbishId(rubbish: rubbish)] != "") {
+                            HStack {
+                                Image(systemName: "xmark.circle.fill")
+                                    .imageScale(.medium)
+                                Text("Nie wyrzucaj:")
+                                    .font(.headline)
+                                    
+                            }
+                            .padding(.top)
+                            Text(RubbishDisplay.rulesDont[RubbishDisplay.returnRubbishId(rubbish: rubbish)])
+                                .lineLimit(nil)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        }
                         
                     }
                         .padding()
@@ -107,7 +122,7 @@ struct DetailedView: View {
             }
             .background(colorScheme == .dark ? Color.black : Color(.systemGray6))
         }
-        .edgesIgnoringSafeArea(.top)
+        .edgesIgnoringSafeArea(.vertical)
             
             
             
@@ -118,7 +133,7 @@ struct DetailedView: View {
         .sheet(
             isPresented: $showingSheet,
             content: {
-                ActivityView(activityItems: [NSURL(string: "https://swiftui.gallery")!] as [Any], applicationActivities: nil)
+                ActivityView(activityItems: [self.rubbish.Nazwa + " → " + "wrzuć do pojemnika na " + RubbishDisplay.returnRubbishType(rubbish: self.rubbish) + " 🚮"] as [Any], applicationActivities: nil)
             }
         )
     }
