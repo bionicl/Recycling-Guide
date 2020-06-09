@@ -9,11 +9,14 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @Environment(\.managedObjectContext) var moc
     @FetchRequest(
         entity: HistoryItem.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \HistoryItem.date, ascending: false)]
     )
     var historyItems:FetchedResults<HistoryItem>
+    var maxRange = 100;
+    var range: Range<Int> = 0..<100
     
     @State private var newHistoryItem = ""
     
@@ -25,6 +28,7 @@ struct HistoryView: View {
                 }
             }
         }
+        .resignKeyboardOnDragGesture()
             
     }
 }

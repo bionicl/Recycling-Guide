@@ -16,7 +16,6 @@ struct RubbishRow: View {
     var body: some View {
         NavigationLink(destination: DetailedView(rubbish: rubbish)
             .onAppear {
-                
                 let newHistoryItem = HistoryItem(context: self.moc)
                 newHistoryItem.id = UUID()
                 newHistoryItem.rubbishId = Int32(self.rubbish._id - 1)
@@ -34,11 +33,18 @@ struct RubbishRow: View {
         }
         
     }
-}
-
-struct RubbishRow_Previews: PreviewProvider {
-    static var previews: some View {
-        RubbishRow(rubbish: rubbishData[0])
-        .padding()
-    }
+    
+//    func removeHistoryItems() {
+//        for index in historyItems {
+//            if (index.rubbishId == rubbish._id - 1) {
+//                moc.delete(index)
+//            }
+//        }
+//        do {
+//            try moc.save()
+//        } catch {
+//            // handle the Core Data error
+//        }
+//    }
+    
 }

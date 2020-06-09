@@ -22,7 +22,6 @@
 		F8960912248812E900E86240 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F8960911248812E900E86240 /* CodeScanner */; };
 		F89609142488149000E86240 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89609132488149000E86240 /* HistoryView.swift */; };
 		F8960916248814DE00E86240 /* RecycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8960915248814DE00E86240 /* RecycleView.swift */; };
-		F896091C24881AF800E86240 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F896091B24881AF800E86240 /* HistoryRow.swift */; };
 		F8C23736248ACE720073BBD5 /* MainSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C23735248ACE720073BBD5 /* MainSearchBar.swift */; };
 		F8C23738248AD62C0073BBD5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C23737248AD62C0073BBD5 /* CardView.swift */; };
 		F8C783B0248FF3BD00A2C1DE /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8C783AE248FF3BD00A2C1DE /* CoreData.xcdatamodeld */; };
@@ -46,7 +45,6 @@
 		F896090A248810DD00E86240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F89609132488149000E86240 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		F8960915248814DE00E86240 /* RecycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleView.swift; sourceTree = "<group>"; };
-		F896091B24881AF800E86240 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 		F8C23735248ACE720073BBD5 /* MainSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSearchBar.swift; sourceTree = "<group>"; };
 		F8C23737248AD62C0073BBD5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F8C783AF248FF3BD00A2C1DE /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 		F896091A24881AEA00E86240 /* Rows */ = {
 			isa = PBXGroup;
 			children = (
-				F896091B24881AF800E86240 /* HistoryRow.swift */,
 				F858A0B12488508D005E7E41 /* RubbishRow.swift */,
 			);
 			path = Rows;
@@ -239,7 +236,6 @@
 				F8C783B0248FF3BD00A2C1DE /* CoreData.xcdatamodeld in Sources */,
 				F8C23736248ACE720073BBD5 /* MainSearchBar.swift in Sources */,
 				F89608FD248810DA00E86240 /* AppDelegate.swift in Sources */,
-				F896091C24881AF800E86240 /* HistoryRow.swift in Sources */,
 				F8C23738248AD62C0073BBD5 /* CardView.swift in Sources */,
 				F8C9A49F248EB05300B8E68A /* DetailedView.swift in Sources */,
 				F89609142488149000E86240 /* HistoryView.swift in Sources */,

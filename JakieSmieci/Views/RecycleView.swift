@@ -66,15 +66,15 @@ struct RecycleView: View {
             }
 
             .navigationBarTitle(Text("Segreguj"))
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.showingDetail.toggle()
-                }) {
-                    Image(systemName: "info.circle.fill")
-                    .imageScale(.large)
-                        .foregroundColor(Color(.systemGreen))
-                }
-            )
+//            .navigationBarItems(trailing:
+//                Button(action: {
+//                    self.showingDetail.toggle()
+//                }) {
+//                    Image(systemName: "info.circle.fill")
+//                    .imageScale(.large)
+//                        .foregroundColor(Color(.systemGreen))
+//                }
+//            )
             .edgesIgnoringSafeArea(.bottom)
         }
         .accentColor( .white)
