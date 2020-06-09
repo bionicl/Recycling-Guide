@@ -9,12 +9,20 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @FetchRequest(
+        entity: HistoryItem.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \HistoryItem.date, ascending: false)]
+    )
+    var historyItems:FetchedResults<HistoryItem>
+    
+    @State private var newHistoryItem = ""
     
     var body: some View {
         List {
             Section(header: Text("Ostatnie wyszukiwania")) {
-                RubbishRow(rubbish: rubbishData[0])
-                RubbishRow(rubbish: rubbishData[1])
+                ForEach(historyItems, id: \.id) { item in
+                    RubbishRow(rubbish: rubbishData[Int(item.rubbishId)])
+                }
             }
         }
             

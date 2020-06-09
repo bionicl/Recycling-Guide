@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct CardView: View {
-    var factId: Int = Int.random(in: 1..<rubbishData.count)
+    var factId: Int
     
     @Environment(\.colorScheme) var colorScheme
     
