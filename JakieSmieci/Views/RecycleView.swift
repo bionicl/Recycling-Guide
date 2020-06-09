@@ -56,6 +56,8 @@ struct RecycleView: View {
                                 .padding(.horizontal)
                             }
                         }
+                        Spacer()
+                        Spacer()
                     }
                         
                     .background(colorScheme == .dark ? Color.black : Color(.systemGray6))
@@ -70,10 +72,12 @@ struct RecycleView: View {
                 }) {
                     Image(systemName: "info.circle.fill")
                     .imageScale(.large)
+                        .foregroundColor(Color(.systemGreen))
                 }
             )
             .edgesIgnoringSafeArea(.bottom)
         }
+        .accentColor( .white)
         
         
     }

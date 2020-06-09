@@ -12,7 +12,7 @@ import SwiftUI
 public class RubbishDisplay {
     
     
-    static let rubbishTypeColors = [Color(.black), Color(.systemGreen), Color(.brown), Color(.systemOrange), Color(.systemBlue), Color(.systemGray), Color(.systemGray), Color(.systemGreen), Color(.systemGray), Color(.systemGray)]
+    static let rubbishTypeColors = [Color(red: 0.1, green: 0.1, blue: 0.1), Color(.systemGreen), Color(.brown), Color(.systemOrange), Color(.systemBlue), Color(.systemGray), Color(.systemGray), Color(.systemGreen), Color(.systemGray), Color(.systemGray)]
     
     static func returnRubbishType(rubbish : RubbishItem) -> String {
        switch rubbish.Typ {
@@ -23,7 +23,7 @@ public class RubbishDisplay {
                 return "szkło"
 
             case "Bio":
-                return "biodegradowalne"
+                return "śmieci biodegradowalne"
         
             case "Plastik i metal":
                 return "plastik i metal"
@@ -32,16 +32,16 @@ public class RubbishDisplay {
                 return "papier"
         
             case "Gabaryty":
-                return "wielkogabarytowe"
+                return "śmieci wielkogabarytowe"
         
             case "Elektrośmieci":
                 return "elektrośmieci"
         
             case "Zielone":
-                return "zielone"
+                return "śmieci zielone"
         
             case "Inne":
-                return "inne"
+                return "inne śmieci"
 
             default:
                 return "none: " + rubbish.Typ
@@ -85,5 +85,11 @@ public class RubbishDisplay {
     static func returnRubbishColor(rubbish : RubbishItem) -> Color {
         let id = returnRubbishId(rubbish: rubbish)
         return rubbishTypeColors[id]
+    }
+}
+
+struct RubbishDisplay_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

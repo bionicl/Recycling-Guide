@@ -33,7 +33,7 @@ struct CardView: View {
                                 .font(.caption)
                         }
                         .foregroundColor(.gray)
-                        Text("Pojemnika na " + RubbishDisplay.returnRubbishType(rubbish: rubbishData[factId]))
+                        Text("pojemnika na " + RubbishDisplay.returnRubbishType(rubbish: rubbishData[factId]))
                         .font(.subheadline)
                             .foregroundColor(.primary)
                     }
