@@ -12,7 +12,7 @@ struct RubbishRow: View {
     var rubbish : RubbishItem
     
     var body: some View {
-        NavigationLink(destination: DetailedView()) {
+        NavigationLink(destination: DetailedView(rubbish: rubbish)) {
             VStack(alignment: .leading) {
                 Text(rubbish.Nazwa)
                 Text(rubbish.Typ)

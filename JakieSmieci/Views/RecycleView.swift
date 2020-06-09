@@ -8,12 +8,14 @@
 
 import SwiftUI
 
-struct SearchView: View {
+struct RecycleView: View {
     @State private var searchText = ""
     @State private var showCancelButton = false
     @State var showingDetail = false
     
-    let featuredIds = [50, 120, 210, 530, 600]
+    @Environment(\.colorScheme) var colorScheme
+    
+    let featuredIds = [50, 120, 210, 530, 393]
     
     var body: some View {
         NavigationView {
@@ -48,7 +50,7 @@ struct SearchView: View {
                         Spacer()
                         
                         ForEach(featuredIds, id: \.self) { item in
-                            NavigationLink(destination: DetailedView()) {
+                            NavigationLink(destination: DetailedView(rubbish: rubbishData[item])) {
                                 CardView(factId: item)
                                 .cornerRadius(10)
                                 .padding(.horizontal)
@@ -56,12 +58,12 @@ struct SearchView: View {
                         }
                     }
                         
-                    .background(Color(.systemGray6))
+                    .background(colorScheme == .dark ? Color.black : Color(.systemGray6))
                 }
                 
             }
 
-            .navigationBarTitle(Text("Gdzie te śmieci"))
+            .navigationBarTitle(Text("Segreguj"))
             .navigationBarItems(trailing:
                 Button(action: {
                     self.showingDetail.toggle()
@@ -79,8 +81,13 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
-        .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
-            //.environment(\.colorScheme, .dark)
+        Group {
+            RecycleView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+            RecycleView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+                .environment(\.colorScheme, .dark)
+        }
+            
     }
 }

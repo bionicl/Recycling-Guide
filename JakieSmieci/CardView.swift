@@ -13,6 +13,8 @@ import SwiftUI
 struct CardView: View {
     var factId: Int = Int.random(in: 1..<rubbishData.count)
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         HStack {
             VStack (alignment: .leading){
@@ -31,7 +33,7 @@ struct CardView: View {
                                 .font(.caption)
                         }
                         .foregroundColor(.gray)
-                        Text("Pojemnika na " + returnRubbishType())
+                        Text("Pojemnika na " + RubbishDisplay.returnRubbishType(rubbish: rubbishData[factId]))
                         .font(.subheadline)
                             .foregroundColor(.primary)
                     }
@@ -45,15 +47,18 @@ struct CardView: View {
             Spacer()
             Circle()
             .frame(width: 50, height: 50)
-            .foregroundColor(rubbishTypeColors[returnRubbishId()])
+                .foregroundColor(RubbishDisplay.returnRubbishColor(rubbish: rubbishData[factId]))
             .overlay(
-                Image(systemName: "trash.fill")
-                    .imageScale(.large)
+                Image(rubbishData[factId].Typ)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 30)
+                    
                     .foregroundColor(.white)
             )
         }
         .padding()
-        .background(Color(.systemBackground))
+        .background(colorScheme == .dark ? Color(.systemGray6) : Color(.systemBackground))
         
         
         
@@ -81,76 +86,6 @@ struct CardView: View {
 //            .padding()
 //        }
     }
-    
-    func returnRubbishType() -> String {
-       switch rubbishData[factId].Typ {
-            case "Zmieszane":
-                return "śmieci zmieszane"
-
-            case "Szkło":
-                return "szkło"
-
-            case "Bio":
-                return "biodegradowalne"
-        
-            case "Plastik i metal":
-                return "plastik i metal"
-        
-            case "Papier":
-                return "papier"
-        
-            case "Gabaryty":
-                return "wielkogabarytowe"
-        
-            case "Elektrośmieci":
-                return "elektrośmieci"
-        
-            case "Zielone":
-                return "zielone"
-        
-            case "Inne":
-                return "inne"
-
-            default:
-                return "none: " + rubbishData[factId].Typ
-        }
-    }
-    
-    func returnRubbishId() -> Int {
-       switch rubbishData[factId].Typ {
-            case "Zmieszane":
-                return 0
-
-            case "Szkło":
-                return 1
-
-            case "Bio":
-                return 2
-        
-            case "Plastik i metal":
-                return 3
-        
-            case "Papier":
-                return 4
-        
-            case "Gabaryty":
-                return 5
-        
-            case "Elektrośmieci":
-                return 6
-        
-            case "Zielone":
-                return 7
-        
-            case "Inne":
-                return 8
-
-            default:
-                return 9
-        }
-    }
-    
-    let rubbishTypeColors = [Color(.black), Color(.systemGreen), Color(.brown), Color(.systemOrange), Color(.systemBlue), Color(.systemGray), Color(.systemGray), Color(.systemGreen), Color(.systemGray), Color(.systemGray)]
 }
 
 struct RandomFact_Previews: PreviewProvider {
