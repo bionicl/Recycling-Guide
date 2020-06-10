@@ -52,12 +52,31 @@ struct RecycleView: View {
                     ScrollView() {
                         Spacer()
                         Spacer()
-                        
+                        Button(action: {
+                            self.isShowingScanner.toggle()
+                        }) {
+                            CardViewScan(headerText: "Otwórz skaner", bodyText: "Skanuj produkty i wrzuć je do odpowiedniego kontenera", iconStr: "qrcode.viewfinder", bgColor: Color(.systemGreen))
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                        }
+                        Button(action: {
+                            self.showCancelButton = true
+                        }) {
+                            CardViewScan(headerText: "Wyszukaj produkt", bodyText: "Wyszukaj spośród bazy tysięcy produktów", iconStr: "magnifyingglass", bgColor: Color(.systemBlue))
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                        }
+                        Text("Dzisiejsze porady:")
+                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading)
+                            .padding(.top)
+                            .font(.headline)
                         ForEach(featuredIds, id: \.self) { item in
                             NavigationLink(destination: DetailedView(rubbish: rubbishData[item])) {
                                 CardView(factId: item)
                                 .cornerRadius(10)
                                 .padding(.horizontal)
+                                    
                             }
                         }
                         Spacer()
@@ -70,15 +89,6 @@ struct RecycleView: View {
             }
 
             .navigationBarTitle(Text("Segreguj"))
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.isShowingScanner.toggle()
-                }) {
-                    Image(systemName: "qrcode.viewfinder")
-                    .imageScale(.large)
-                        .foregroundColor(Color(.systemGreen))
-                }
-            )
             .edgesIgnoringSafeArea(.bottom)
         }
         .accentColor( .white)
@@ -181,8 +191,8 @@ struct SearchView_Previews: PreviewProvider {
         Group {
             RecycleView()
                 .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
-            ScannerModalView(isShowingScanner: .constant(true), onDismiss: {})
-                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+//            ScannerModalView(isShowingScanner: .constant(true), onDismiss: {})
+//                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
             RecycleView()
                 .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
                 .environment(\.colorScheme, .dark)

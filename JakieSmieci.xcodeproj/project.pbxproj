@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F82B6E4D249126F40007DA35 /* CardViewScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B6E4C249126F40007DA35 /* CardViewScan.swift */; };
 		F8442D7D2490FA6A00F65E55 /* AllRubbishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D7C2490FA6A00F65E55 /* AllRubbishView.swift */; };
 		F858A0AE24884B84005E7E41 /* RubbishItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A0AD24884B84005E7E41 /* RubbishItem.swift */; };
 		F858A0B024884CF3005E7E41 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A0AF24884CF3005E7E41 /* Data.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F82B6E4C249126F40007DA35 /* CardViewScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewScan.swift; sourceTree = "<group>"; };
 		F8442D7C2490FA6A00F65E55 /* AllRubbishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRubbishView.swift; sourceTree = "<group>"; };
 		F858A0AD24884B84005E7E41 /* RubbishItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishItem.swift; sourceTree = "<group>"; };
 		F858A0AF24884CF3005E7E41 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				F8C23737248AD62C0073BBD5 /* CardView.swift */,
+				F82B6E4C249126F40007DA35 /* CardViewScan.swift */,
 				F8C9A49E248EB05300B8E68A /* DetailedView.swift */,
 				F89609132488149000E86240 /* HistoryView.swift */,
 				F8442D7C2490FA6A00F65E55 /* AllRubbishView.swift */,
@@ -254,6 +257,7 @@
 				F8C783B0248FF3BD00A2C1DE /* CoreData.xcdatamodeld in Sources */,
 				F89608FD248810DA00E86240 /* AppDelegate.swift in Sources */,
 				F8C23738248AD62C0073BBD5 /* CardView.swift in Sources */,
+				F82B6E4D249126F40007DA35 /* CardViewScan.swift in Sources */,
 				F8C9A49F248EB05300B8E68A /* DetailedView.swift in Sources */,
 				F89609142488149000E86240 /* HistoryView.swift in Sources */,
 				F89608FF248810DA00E86240 /* SceneDelegate.swift in Sources */,

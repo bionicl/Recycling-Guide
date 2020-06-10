@@ -10,32 +10,27 @@ import SwiftUI
 
 
 
-struct CardView: View {
-    var factId: Int
-    
+struct CardViewScan: View {
     @Environment(\.colorScheme) var colorScheme
+    var headerText : String
+    var bodyText : String
+    var iconStr : String
+    var bgColor = Color(.systemGreen)
     
     var body: some View {
         HStack {
             VStack (alignment: .leading){
-                Text(rubbishData[factId].Nazwa)
+                Text(headerText)
                     .font(.body)
                     .fontWeight(.medium)
-                    .foregroundColor(.primary)
+                    .foregroundColor(.white)
                     .padding(0)
                 HStack {
                     VStack(alignment: .leading) {
-                        HStack {
-                            Image(systemName: "arrow.down.circle.fill")
-                                .imageScale(.small)
-                                .padding(.vertical, 0)
-                            Text("wyrzuć do")
-                                .font(.caption)
-                        }
-                        .foregroundColor(.gray)
-                        Text("pojemnika na " + RubbishDisplay.returnRubbishType(rubbish: rubbishData[factId]))
+                        Text(bodyText)
                         .font(.subheadline)
-                            .foregroundColor(.primary)
+                            .foregroundColor(Color(red: 1, green: 1, blue: 1, opacity: 0.7))
+                            .padding(.top, 8)
                     }
                     Spacer()
 
@@ -47,19 +42,19 @@ struct CardView: View {
             Spacer()
             Circle()
             .frame(width: 50, height: 50)
-                .foregroundColor(RubbishDisplay.returnRubbishColor(rubbish: rubbishData[factId]))
+                .foregroundColor(Color(.systemGray6))
             .overlay(
-                Image(rubbishData[factId].Typ)
+                Image(systemName: iconStr)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: 30)
+                    .frame(height: 24)
                     
-                    .foregroundColor(.white)
+                    .foregroundColor(bgColor)
             )
-            .frame(height: 100)
+            .frame(height: 80)
         }
         .padding()
-        .background(colorScheme == .dark ? Color(.systemGray6) : Color(.systemBackground))
+        .background(bgColor)
         
         
         
@@ -89,8 +84,8 @@ struct CardView: View {
     }
 }
 
-struct RandomFact_Previews: PreviewProvider {
+struct CardViewScan_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(factId: 120)
+        CardViewScan(headerText: "Otwórz skaner", bodyText: "Skanuj produkty i wrzuć je do odpowiedniego kontenera!", iconStr: "qrcode.viewfinder", bgColor: Color(.systemGreen))
     }
 }
