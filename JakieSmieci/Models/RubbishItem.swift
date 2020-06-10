@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 
-struct RubbishItem: Hashable, Codable {
+struct RubbishItem: Hashable, Codable, Comparable {
+    static func < (lhs: RubbishItem, rhs: RubbishItem) -> Bool {
+        return lhs.Nazwa < rhs.Nazwa
+    }
+    
     var _id: Int
     var Identyfikator: Int
     var Nazwa: String

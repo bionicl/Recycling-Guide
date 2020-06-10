@@ -840,13 +840,6 @@
         "Typ": "Plastik i metal"
     },
     {
-        "_id": 161,
-        "Identyfikator": 606,
-        "Nazwa": "W\u0119giel po grillu",
-        "Synonim": "w\u0119gla ",
-        "Typ": "Zmieszane"
-    },
-    {
         "_id": 121,
         "Identyfikator": 549,
         "Nazwa": "Opakowanie po \u015brodkach czysto\u015bci plastikowe",
@@ -964,20 +957,6 @@
         "Nazwa": "Sk\u00f3rka cytrus\u00f3w",
         "Synonim": "sk\u00f3rka od cytrus\u00f3w, sk\u00f3rka po cytrusach, sk\u00f3rki po cytrusach ",
         "Typ": "Bio"
-    },
-    {
-        "_id": 159,
-        "Identyfikator": 603,
-        "Nazwa": "Warzywa",
-        "Synonim": "warzyw, warzywo, surowe warzywa ",
-        "Typ": "Bio"
-    },
-    {
-        "_id": 160,
-        "Identyfikator": 604,
-        "Nazwa": "Pierze z poduszek",
-        "Synonim": "poduszki z pierzem, pi\u00f3ra, poduszka, poduszk\u0119, poduszki",
-        "Typ": "Zmieszane"
     },
     {
         "_id": 138,
@@ -1125,6 +1104,27 @@
         "Nazwa": "Owoce",
         "Synonim": "owoc, owoc\u00f3w, zgni\u0142e owoce, sple\u015bnia\u0142e",
         "Typ": "Bio"
+    },
+    {
+        "_id": 159,
+        "Identyfikator": 603,
+        "Nazwa": "Warzywa",
+        "Synonim": "warzyw, warzywo, surowe warzywa ",
+        "Typ": "Bio"
+    },
+    {
+        "_id": 160,
+        "Identyfikator": 604,
+        "Nazwa": "Pierze z poduszek",
+        "Synonim": "poduszki z pierzem, pi\u00f3ra, poduszka, poduszk\u0119, poduszki",
+        "Typ": "Zmieszane"
+    },
+    {
+        "_id": 161,
+        "Identyfikator": 606,
+        "Nazwa": "W\u0119giel po grillu",
+        "Synonim": "w\u0119gla ",
+        "Typ": "Zmieszane"
     },
     {
         "_id": 162,
@@ -2021,13 +2021,6 @@
         "Nazwa": "Krewetki",
         "Synonim": "ogonki po krewetkach, pancerzyki krewetek, krewetka, ",
         "Typ": "Zmieszane"
-    },
-    {
-        "_id": 538,
-        "Identyfikator": 1377,
-        "Nazwa": "Kolorowanka",
-        "Synonim": "malowanka, dzieci\u0119ca kolorowanka ",
-        "Typ": "Papier"
     },
     {
         "_id": 290,
@@ -3073,13 +3066,6 @@
         "Typ": "Szk\u0142o"
     },
     {
-        "_id": 539,
-        "Identyfikator": 1379,
-        "Nazwa": "Statek z papieru",
-        "Synonim": "origami, samolot z papieru, statki z papieru ",
-        "Typ": "Papier"
-    },
-    {
         "_id": 439,
         "Identyfikator": 1213,
         "Nazwa": "Opony",
@@ -3332,41 +3318,6 @@
         "Typ": "Zmieszane"
     },
     {
-        "_id": 494,
-        "Identyfikator": 1310,
-        "Nazwa": "Kalka",
-        "Synonim": "kalki, kalk\u0119, kalka papierowa, kalka techniczna, kalka do maszyny do pisania, kalka z tuszem",
-        "Typ": "Zmieszane"
-    },
-    {
-        "_id": 511,
-        "Identyfikator": 1335,
-        "Nazwa": "Siatka na owoce, warzywa plastikowa",
-        "Synonim": "siatka po cytrynach plastikowa,  siatka po ziemniakach plastikowa, siatka z dziurami plastikowa, siatka po w\u0142oszczy\u017anie plastikowa ",
-        "Typ": "Plastik i metal"
-    },
-    {
-        "_id": 512,
-        "Identyfikator": 1336,
-        "Nazwa": "Opakowanie po w\u0119dlinie, serze w plastrach plastikowe",
-        "Synonim": "pojemnik po w\u0119dlinie, serze w plastrach plastikowy ",
-        "Typ": "Plastik i metal"
-    },
-    {
-        "_id": 513,
-        "Identyfikator": 1337,
-        "Nazwa": "Pi\u0142ka gumowa",
-        "Synonim": "pi\u0142ki gumowe, pi\u0142ka do tenisa, pi\u0142ka tenisowa, ",
-        "Typ": "Zmieszane"
-    },
-    {
-        "_id": 601,
-        "Identyfikator": 1469,
-        "Nazwa": "Folia okrywaj\u0105ca paczk\u0119 po papierosach",
-        "Synonim": "",
-        "Typ": "Zmieszane"
-    },
-    {
         "_id": 475,
         "Identyfikator": 1271,
         "Nazwa": "Opakowanie styropianowe po jedzeniu na wynos brudne",
@@ -3500,6 +3451,13 @@
         "Typ": "Inne"
     },
     {
+        "_id": 494,
+        "Identyfikator": 1310,
+        "Nazwa": "Kalka",
+        "Synonim": "kalki, kalk\u0119, kalka papierowa, kalka techniczna, kalka do maszyny do pisania, kalka z tuszem",
+        "Typ": "Zmieszane"
+    },
+    {
         "_id": 495,
         "Identyfikator": 1312,
         "Nazwa": "Tacka po mi\u0119sie styropianowa",
@@ -3610,6 +3568,27 @@
         "Nazwa": "Elektro\u015bmieci",
         "Synonim": "elektroodpady, radio, sprz\u0119t AGD, sprz\u0119t RTV, telewizor, monitor, wibrator, sprz\u0119t elektroniczny, drukarka",
         "Typ": "Elektro\u015bmieci"
+    },
+    {
+        "_id": 511,
+        "Identyfikator": 1335,
+        "Nazwa": "Siatka na owoce, warzywa plastikowa",
+        "Synonim": "siatka po cytrynach plastikowa,  siatka po ziemniakach plastikowa, siatka z dziurami plastikowa, siatka po w\u0142oszczy\u017anie plastikowa ",
+        "Typ": "Plastik i metal"
+    },
+    {
+        "_id": 512,
+        "Identyfikator": 1336,
+        "Nazwa": "Opakowanie po w\u0119dlinie, serze w plastrach plastikowe",
+        "Synonim": "pojemnik po w\u0119dlinie, serze w plastrach plastikowy ",
+        "Typ": "Plastik i metal"
+    },
+    {
+        "_id": 513,
+        "Identyfikator": 1337,
+        "Nazwa": "Pi\u0142ka gumowa",
+        "Synonim": "pi\u0142ki gumowe, pi\u0142ka do tenisa, pi\u0142ka tenisowa, ",
+        "Typ": "Zmieszane"
     },
     {
         "_id": 514,
@@ -3777,6 +3756,20 @@
         "Identyfikator": 1375,
         "Nazwa": "Pude\u0142ko tekturowe",
         "Synonim": "tekturowe pude\u0142ko, pud\u0142o tekturowe, tekturowe pude\u0142ko, opakowanie tekturowe ",
+        "Typ": "Papier"
+    },
+    {
+        "_id": 538,
+        "Identyfikator": 1377,
+        "Nazwa": "Kolorowanka",
+        "Synonim": "malowanka, dzieci\u0119ca kolorowanka ",
+        "Typ": "Papier"
+    },
+    {
+        "_id": 539,
+        "Identyfikator": 1379,
+        "Nazwa": "Statek z papieru",
+        "Synonim": "origami, samolot z papieru, statki z papieru ",
         "Typ": "Papier"
     },
     {
@@ -3959,13 +3952,6 @@
         "Identyfikator": 1416,
         "Nazwa": "Serwetki papierowe brudne",
         "Synonim": "serwetka, serwetk\u0119, brudna serwetka, brudne serwetki, brudn\u0105 serwetk\u0119, serwetki papierowe, Serwetka papierowa",
-        "Typ": "Zmieszane"
-    },
-    {
-        "_id": 602,
-        "Identyfikator": 1470,
-        "Nazwa": "M\u0142ynek po przyprawach r\u0119czny",
-        "Synonim": "m\u0142ynki po przyprawach ",
         "Typ": "Zmieszane"
     },
     {
@@ -4212,6 +4198,20 @@
         "Nazwa": "Paczka po papierosach papierowa",
         "Synonim": "",
         "Typ": "Papier"
+    },
+    {
+        "_id": 601,
+        "Identyfikator": 1469,
+        "Nazwa": "Folia okrywaj\u0105ca paczk\u0119 po papierosach",
+        "Synonim": "",
+        "Typ": "Zmieszane"
+    },
+    {
+        "_id": 602,
+        "Identyfikator": 1470,
+        "Nazwa": "M\u0142ynek po przyprawach r\u0119czny",
+        "Synonim": "m\u0142ynki po przyprawach ",
+        "Typ": "Zmieszane"
     },
     {
         "_id": 603,
