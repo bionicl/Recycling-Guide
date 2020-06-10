@@ -16,6 +16,7 @@ struct RecycleView: View {
     
     @State private var isShowingScanner = false
     
+    @Environment(\.managedObjectContext) var moc
     @Environment(\.colorScheme) var colorScheme
     
     let featuredIds = [50, 120, 210, 530, 393]
@@ -36,7 +37,7 @@ struct RecycleView: View {
                     VStack {
                         // Filtered list of nam
                         List {
-                            ForEach(rubbishData.filter {
+                            ForEach(rubbishData.sorted().filter {
                                 $0.contains(search: self.searchText)
                             }, id: \.self) { rubbish in
                                 RubbishRow(rubbish: rubbish)
@@ -87,21 +88,47 @@ struct RecycleView: View {
                 ScannerModalView(isShowingScanner: self.$isShowingScanner, onDismiss: {
                     self.isShowingScanner = false
                 })
+                .environment(\.managedObjectContext, self.moc)
             }
+            
         }
     }
 }
 
 struct ScannerModalView: View {
-    @Binding public var isShowingScanner : Bool
+    @Environment(\.managedObjectContext) var moc
     
-    @State var pushActive = false
+    @Binding public var isShowingScanner : Bool
+    @FetchRequest(
+        entity: Barcode.entity(),
+        sortDescriptors: []
+    )
+    var barcodes:FetchedResults<Barcode>
+    
+    @State var newItemPushActive = false
+    @State var detailsPushActive = false
+    
+    @State var scannedBarcode = ""
+    @State var foundRubbishId = 0
     
     var onDismiss: () -> Void
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             CodeScannerView(codeTypes:[.upce, .ean13, .ean8], simulatedData: "5900717314634", completion: self.handleScan)
+                .background(Color(.gray))
+                .overlay(
+                VStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color(red: 1, green: 1, blue: 1, opacity: 0.3), lineWidth: 5)
+                        .frame(width: 260, height: 160)
+                    .padding(.top, 100)
+                    Text("zeskanuj kod kreskowy")
+                        .padding(.top, 100)
+                        .font(.headline)
+                }
+            )
+                .padding(.bottom, 0)
             .navigationBarTitle(Text("Skanuj"), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
                 print("Dismissing sheet view...")
@@ -109,10 +136,14 @@ struct ScannerModalView: View {
             }) {
                 Text("Gotowe").bold()
             })
-            NavigationLink(destination: DetailedView(rubbish: rubbishData[0]), isActive: self.$pushActive) {
+            NavigationLink(destination: AllRubbishView(barCode: self.scannedBarcode).environment(\.managedObjectContext, self.moc), isActive: self.$newItemPushActive) {
+              Text("")
+            }.hidden()
+            NavigationLink(destination: DetailedView(rubbish: rubbishData[self.foundRubbishId]).environment(\.managedObjectContext, self.moc), isActive: self.$detailsPushActive) {
               Text("")
             }.hidden()
         }
+        
         
     }
     
@@ -120,8 +151,24 @@ struct ScannerModalView: View {
         
         switch result {
         case .success(let code):
-            print(code.components(separatedBy: "\n"))
-            pushActive = true
+            let split = code.components(separatedBy: "\n")
+            scannedBarcode = split[0]
+            
+            var found = false;
+            
+            for item in barcodes {
+                print(item)
+                if (item.code == scannedBarcode) {
+                    print("Found!" + item.code! + "  " + String(item.rubbishId))
+                    found = true
+                    foundRubbishId = Int(item.rubbishId)
+                    self.detailsPushActive = true
+                    break
+                }
+            }
+            if (found == false) {
+                self.newItemPushActive = true
+            }
         case .failure(_):
             print("Error")
             self.isShowingScanner = false
@@ -133,6 +180,8 @@ struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             RecycleView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+            ScannerModalView(isShowingScanner: .constant(true), onDismiss: {})
                 .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
             RecycleView()
                 .previewDevice(PreviewDevice(rawValue: "iPhone SE"))

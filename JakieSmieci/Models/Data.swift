@@ -2,7 +2,7 @@ import UIKit
 import SwiftUI
 import CoreLocation
 
-let rubbishData: [RubbishItem] = load("rubbishList.json")
+var rubbishData: [RubbishItem] = load("rubbishList.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
@@ -25,6 +25,7 @@ func load<T: Decodable>(_ filename: String) -> T {
     } catch {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
+    
 }
 
 final class ImageStore {
