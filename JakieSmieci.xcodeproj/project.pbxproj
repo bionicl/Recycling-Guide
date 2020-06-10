@@ -12,6 +12,7 @@
 		F858A0B22488508D005E7E41 /* RubbishRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A0B12488508D005E7E41 /* RubbishRow.swift */; };
 		F858A0B524885156005E7E41 /* rubbishList.json in Resources */ = {isa = PBXBuildFile; fileRef = F858A0B424885156005E7E41 /* rubbishList.json */; };
 		F858A0B824885857005E7E41 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A0B724885857005E7E41 /* SearchBar.swift */; };
+		F877256B2490EC850022B80B /* CodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F877256A2490EC850022B80B /* CodeScanner.swift */; };
 		F8860E19248FCAED007F5537 /* RubbishDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8860E18248FCAED007F5537 /* RubbishDisplay.swift */; };
 		F89608FD248810DA00E86240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89608FC248810DA00E86240 /* AppDelegate.swift */; };
 		F89608FF248810DA00E86240 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89608FE248810DA00E86240 /* SceneDelegate.swift */; };
@@ -19,7 +20,6 @@
 		F8960903248810DD00E86240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8960902248810DD00E86240 /* Assets.xcassets */; };
 		F8960906248810DD00E86240 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8960905248810DD00E86240 /* Preview Assets.xcassets */; };
 		F8960909248810DD00E86240 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8960907248810DD00E86240 /* LaunchScreen.storyboard */; };
-		F8960912248812E900E86240 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F8960911248812E900E86240 /* CodeScanner */; };
 		F89609142488149000E86240 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89609132488149000E86240 /* HistoryView.swift */; };
 		F8960916248814DE00E86240 /* RecycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8960915248814DE00E86240 /* RecycleView.swift */; };
 		F8C23736248ACE720073BBD5 /* MainSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C23735248ACE720073BBD5 /* MainSearchBar.swift */; };
@@ -34,6 +34,7 @@
 		F858A0B12488508D005E7E41 /* RubbishRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishRow.swift; sourceTree = "<group>"; };
 		F858A0B424885156005E7E41 /* rubbishList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rubbishList.json; sourceTree = "<group>"; };
 		F858A0B724885857005E7E41 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		F877256A2490EC850022B80B /* CodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScanner.swift; sourceTree = "<group>"; };
 		F8860E18248FCAED007F5537 /* RubbishDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubbishDisplay.swift; sourceTree = "<group>"; };
 		F89608F9248810DA00E86240 /* JakieSmieci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JakieSmieci.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89608FC248810DA00E86240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8960912248812E900E86240 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +99,7 @@
 		F89608FB248810DA00E86240 /* JakieSmieci */ = {
 			isa = PBXGroup;
 			children = (
+				F877256A2490EC850022B80B /* CodeScanner.swift */,
 				F8C783B1248FF68000A2C1DE /* CoreData */,
 				F858A0B624885180005E7E41 /* Resources */,
 				F858A0AA24884B22005E7E41 /* Models */,
@@ -170,7 +171,6 @@
 			);
 			name = JakieSmieci;
 			packageProductDependencies = (
-				F8960911248812E900E86240 /* CodeScanner */,
 			);
 			productName = JakieSmieci;
 			productReference = F89608F9248810DA00E86240 /* JakieSmieci.app */;
@@ -231,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F877256B2490EC850022B80B /* CodeScanner.swift in Sources */,
 				F858A0B22488508D005E7E41 /* RubbishRow.swift in Sources */,
 				F8960916248814DE00E86240 /* RecycleView.swift in Sources */,
 				F8C783B0248FF3BD00A2C1DE /* CoreData.xcdatamodeld in Sources */,
@@ -449,14 +450,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F8960911248812E900E86240 /* CodeScanner */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F8960910248812E900E86240 /* XCRemoteSwiftPackageReference "CodeScanner" */;
-			productName = CodeScanner;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F8C783AE248FF3BD00A2C1DE /* CoreData.xcdatamodeld */ = {

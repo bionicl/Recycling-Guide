@@ -7,11 +7,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct RecycleView: View {
     @State private var searchText = ""
     @State private var showCancelButton = false
     @State var showingDetail = false
+    
+    @State private var isShowingScanner = false
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -66,20 +69,63 @@ struct RecycleView: View {
             }
 
             .navigationBarTitle(Text("Segreguj"))
-//            .navigationBarItems(trailing:
-//                Button(action: {
-//                    self.showingDetail.toggle()
-//                }) {
-//                    Image(systemName: "info.circle.fill")
-//                    .imageScale(.large)
-//                        .foregroundColor(Color(.systemGreen))
-//                }
-//            )
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.isShowingScanner.toggle()
+                }) {
+                    Image(systemName: "qrcode.viewfinder")
+                    .imageScale(.large)
+                        .foregroundColor(Color(.systemGreen))
+                }
+            )
             .edgesIgnoringSafeArea(.bottom)
         }
         .accentColor( .white)
         
+        .sheet(isPresented: $isShowingScanner) {
+            NavigationView {
+                ScannerModalView(isShowingScanner: self.$isShowingScanner, onDismiss: {
+                    self.isShowingScanner = false
+                })
+            }
+        }
+    }
+}
+
+struct ScannerModalView: View {
+    @Binding public var isShowingScanner : Bool
+    
+    @State var pushActive = false
+    
+    var onDismiss: () -> Void
+
+    var body: some View {
+        VStack {
+            CodeScannerView(codeTypes:[.upce, .ean13, .ean8], simulatedData: "5900717314634", completion: self.handleScan)
+            .navigationBarTitle(Text("Skanuj"), displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: {
+                print("Dismissing sheet view...")
+                self.isShowingScanner = false
+            }) {
+                Text("Gotowe").bold()
+            })
+            NavigationLink(destination: DetailedView(rubbish: rubbishData[0]), isActive: self.$pushActive) {
+              Text("")
+            }.hidden()
+        }
         
+    }
+    
+    func handleScan(result: Result<String, CodeScannerView.ScanError>) {
+        
+        switch result {
+        case .success(let code):
+            print(code.components(separatedBy: "\n"))
+            pushActive = true
+        case .failure(_):
+            print("Error")
+            self.isShowingScanner = false
+        }
     }
 }
 
